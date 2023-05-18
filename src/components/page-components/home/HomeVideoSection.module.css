@@ -1,0 +1,11 @@
+.video__section {
+  padding: 60px 0px;
+  height: 550px;
+}
+
+.video__iframe {
+  height: auto;
+  width: auto;
+  min-height: 100%;
+  min-width: 100%;
+}

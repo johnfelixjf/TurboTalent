@@ -1,0 +1,69 @@
+.hero__section {
+  position: relative;
+}
+
+.hero__container {
+  min-height: 750px;
+  height: fit-content;
+  align-items: center;
+  padding-bottom: 60px;
+}
+
+.hero__text {
+  text-align: center;
+  padding-left: 40px;
+  letter-spacing: -0.02em;
+  margin-top: 0;
+  margin-bottom: 0;
+  font-size: 48px;
+  font-weight: 700;
+  line-height: 1.2;
+}
+
+.hero__image-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.hero__form-container {
+  width: 80%;
+  margin: auto;
+  margin-top: 32px;
+}
+
+.hero__image {
+  max-height: 750px;
+  height: auto;
+  width: auto;
+  max-width: 100%;
+}
+
+.slogan__container {
+  position: absolute;
+  left: 50%;
+  bottom: 0px;
+  transform: translate(-50%, 100%);
+  padding: 16px 48px;
+  color: #3e404c;
+  background-image: url(assets/svg/slogan-bg.svg);
+  background-position: 0 0;
+  background-repeat: no-repeat;
+  background-size: cover;
+  justify-content: center;
+}
+
+.slogan__text {
+  font-size: 14px;
+  white-space: nowrap;
+}
+
+@media screen and (max-width: 900px) {
+  .hero__text {
+    font-size: 28px;
+  }
+
+  .hero__image {
+    max-height: 500px;
+  }
+}

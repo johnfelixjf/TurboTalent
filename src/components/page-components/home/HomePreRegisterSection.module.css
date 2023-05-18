@@ -1,0 +1,38 @@
+.pre-register__section {
+  padding: 100px 0px;
+}
+
+.pre-register__form-wrapper {
+  height: fit-content;
+  background-color: #f9f9fb;
+  padding: 80px 3% 43px;
+}
+
+.pre-register__logo {
+  width: 64px;
+  height: 64px;
+  background-color: #fff;
+  border: 1px solid #ebebef;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: -32px auto 48px;
+}
+
+.pre-register__title {
+  letter-spacing: -0.02em;
+  font-size: 32px;
+  font-weight: 700;
+  line-height: 1.4;
+  margin-bottom: 16px;
+  text-align: center;
+}
+
+.pre-register__info {
+  letter-spacing: -0.02em;
+  margin: 0px auto 44px;
+  font-size: 16px;
+  line-height: 1.8;
+  max-width: 490px;
+  text-align: center;
+}

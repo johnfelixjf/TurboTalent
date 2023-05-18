@@ -1,0 +1,37 @@
+.feature__container {
+  grid-column-gap: 16px;
+  background-color: #f9f9fb;
+  align-items: flex-start;
+  padding: 16px;
+  display: flex;
+}
+
+.feature__image {
+  width: 56px;
+  height: 56px;
+  background-color: #fff;
+  border: 1px solid #ebebef;
+  border-radius: 4px;
+  flex: none;
+  justify-content: center;
+  align-items: center;
+  display: flex;
+}
+
+.feature__title {
+  letter-spacing: -0.02em;
+  margin-top: 0;
+  margin-bottom: 0;
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 1.8;
+  margin-bottom: 4px;
+}
+
+.feature__info {
+  color: #606476;
+  letter-spacing: -0.02em;
+  margin-bottom: 0;
+  font-size: 14px;
+  line-height: 1.6;
+}

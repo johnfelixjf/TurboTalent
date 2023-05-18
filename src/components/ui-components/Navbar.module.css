@@ -1,0 +1,17 @@
+.nav__container {
+  height: 100px;
+  padding: 20px 50px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-bottom: 1px solid #ebebef;
+  position: sticky;
+  top: 0px;
+  left: 0px;
+  z-index: 1;
+  background-color: #fff;
+}
+
+.nav__logo {
+  height: 60px;
+}

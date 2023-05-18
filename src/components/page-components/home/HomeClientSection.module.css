@@ -1,0 +1,18 @@
+.client__section {
+  padding: 60px 0px;
+  margin-top: 70px;
+}
+
+.client__container {
+  justify-content: center;
+}
+
+.client__image-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.client__image {
+  height: 32px;
+}

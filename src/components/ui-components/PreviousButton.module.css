@@ -1,0 +1,27 @@
+.previous-button {
+  width: 48px;
+  height: 48px;
+  color: #030407;
+  background-color: #fff;
+  border: 1px solid #ebebef;
+  justify-content: center;
+  align-items: center;
+  transition: all 0.4s;
+  display: flex;
+  top: auto;
+  bottom: 0%;
+  left: 0%;
+  right: auto;
+}
+
+.previous-button:disabled {
+  color: #d6d7e0;
+}
+
+.previous-button:hover:not([disabled]) {
+  background-color: #ebebef;
+}
+
+.previous-button:active:not([disabled]) {
+  background-color: #ccc;
+}
