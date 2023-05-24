@@ -1,29 +1,50 @@
 import React from "react";
 import { Grid, Typography } from "@mui/material";
-import styles from "./Interviewer.module.css";
+import styles from "./startupBlog.module.css";
+import { useEffect } from "react";
+import AOS from "aos";
+import "aos/dist/aos.css";
+import { useLocation } from "react-router-dom";
 
 import Startup from "../../../assets/images/static/blog/work-startup.png";
 
 const StartupBlog = () => {
+  const { pathname } = useLocation();
+
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, [pathname]);
+
+  useEffect(() => {
+    AOS.init({
+      delay: 400, // values from 0 to 3000, with step 50ms
+      once: true, // whether animation should happen only once - while scrolling down
+    }); // Initialize AOS library
+  }, []);
+
   return (
     <Grid container direction="column" className={styles.blogpostRoot}>
       {/* Blog post header */}
-      <Grid item className={styles.blogpostHeaderBlock}>
+      <Grid item className={styles.blogpostHeaderBlock} data-aos="fade-up">
         {/* Badge and date */}
         <div className={styles.headerBadge}>
-          <div className={styles.headerBadgeLight}>
+          <div className={styles.headerBadgeLight} data-aos="fade-up">
             <div>New</div>
           </div>
-          <div>April 23, 2023</div>
+          <div data-aos="fade-up">April 23, 2023</div>
         </div>
         {/* Blog title */}
-        <div className={styles.blogpostTitle}>
+        <div className={styles.blogpostTitle} data-aos="fade-up">
           <Typography variant="h2">
             Pros and Cons of Working for a Startup.
           </Typography>
         </div>
         {/* Blog post content */}
-        <Typography variant="body1" className={styles.paragraphLarge}>
+        <Typography
+          variant="body1"
+          className={styles.paragraphLarge}
+          data-aos="fade-up"
+        >
           <p>
             Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin non
             mauris tincidunt, porttitor sapien et, fringilla ligula. Etiam vel
@@ -41,17 +62,19 @@ const StartupBlog = () => {
             opacity: 1,
             transformStyle: "preserve-3d",
           }}
+          data-aos="fade-up"
         >
           <img
             src={Startup}
             loading="lazy"
             alt=""
             className={styles.blogpostImage}
+            data-aos="fade-up"
           />
         </div>
       </Grid>
       <Grid item>
-        <div className={styles.pageElobrateContentContainer}>
+        <div className={styles.pageElobrateContentContainer} data-aos="fade-up">
           <p>
             Working for a startup can be an enticing career move, with the
             promise of innovative projects, a fast-paced environment, and the
@@ -82,7 +105,11 @@ const StartupBlog = () => {
             the right choice for you.
           </p>
           <p>Pros: </p>
-          <ol start="" role="list">
+          <ul
+            start=""
+            role="list"
+            className={styles.pageElobrateContentUnorderList}
+          >
             <li>
               Exciting Work Environment: Startups are known for their fast-paced
               and exciting work environment. Employees are often working on
@@ -106,9 +133,13 @@ const StartupBlog = () => {
               ownership and pride in the company's success. They feel like they
               are making a difference and are part of something meaningful.
             </li>
-          </ol>
+          </ul>
           <p>Cons: </p>
-          <ol start="" role="list">
+          <ul
+            start=""
+            role="list"
+            className={styles.pageElobrateContentUnorderList}
+          >
             <li>
               High Risk: Startups are inherently risky, with a high failure
               rate. This means that there is a risk that the company may not
@@ -130,7 +161,7 @@ const StartupBlog = () => {
               succeed, which can be demanding for employees who value work-life
               balance.
             </li>
-          </ol>
+          </ul>
           <p>Conclusion: </p>
 
           <p>

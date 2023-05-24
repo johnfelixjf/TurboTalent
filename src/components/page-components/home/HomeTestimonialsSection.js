@@ -139,7 +139,6 @@ const HomeTestimonialsSection = () => {
           </Grid>
         </Grid>
       </Container>
-      ;
     </div>
   );
 };

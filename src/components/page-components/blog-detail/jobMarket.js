@@ -1,29 +1,50 @@
 import React from "react";
 import { Grid, Typography } from "@mui/material";
-import styles from "./Interviewer.module.css";
+import styles from "./jobMarket.module.css";
+import { useEffect } from "react";
+import AOS from "aos";
+import "aos/dist/aos.css";
+import { useLocation } from "react-router-dom";
 
 import JobMarketImage from "../../../assets/images/static/blog/soft-skills.webp";
 
 const JobMarket = () => {
+  const { pathname } = useLocation();
+
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, [pathname]);
+
+  useEffect(() => {
+    AOS.init({
+      delay: 400, // values from 0 to 3000, with step 50ms
+      once: true, // whether animation should happen only once - while scrolling down
+    }); // Initialize AOS library
+  }, []);
+
   return (
     <Grid container direction="column" className={styles.blogpostRoot}>
       {/* Blog post header */}
-      <Grid item className={styles.blogpostHeaderBlock}>
+      <Grid item className={styles.blogpostHeaderBlock} data-aos="fade-up">
         {/* Badge and date */}
         <div className={styles.headerBadge}>
-          <div className={styles.headerBadgeLight}>
+          <div className={styles.headerBadgeLight} data-aos="fade-up">
             <div>New</div>
           </div>
-          <div>April 23, 2023</div>
+          <div data-aos="fade-up">April 23, 2023</div>
         </div>
         {/* Blog title */}
-        <div className={styles.blogpostTitle}>
+        <div className={styles.blogpostTitle} data-aos="fade-up">
           <Typography variant="h2">
             The Importance of Soft Skills in Today's Indian Job Market.
           </Typography>
         </div>
         {/* Blog post content */}
-        <Typography variant="body1" className={styles.paragraphLarge}>
+        <Typography
+          variant="body1"
+          className={styles.paragraphLarge}
+          data-aos="fade-up"
+        >
           <p>
             Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin non
             mauris tincidunt, porttitor sapien et, fringilla ligula. Etiam vel
@@ -47,12 +68,13 @@ const JobMarket = () => {
             loading="lazy"
             alt=""
             className={styles.blogpostImage}
+            data-aos="fade-up"
           />
         </div>
       </Grid>
       <Grid item>
-        <div className={styles.pageElobrateContentContainer}>
-          <p>
+        <div className={styles.pageElobrateContentContainer} data-aos="fade-up">
+          <p data-aos="fade-up">
             In today's rapidly evolving job market, employers are increasingly
             looking for candidates who possess a combination of technical
             expertise and soft skills. While technical skills and experience are
@@ -62,7 +84,7 @@ const JobMarket = () => {
             companies are seeking candidates who can work collaboratively and
             navigate the challenges of an increasingly globalized economy.
           </p>
-          <p>
+          <p data-aos="fade-up">
             As India continues to grow and evolve as a major economic power,
             soft skills have become a critical component of professional
             success. With an increasingly diverse workforce and a global
@@ -73,8 +95,13 @@ const JobMarket = () => {
             practical tips on how to develop and showcase these essential skills
             to stand out from the competition.
           </p>
-          <p>Body: </p>
-          <ol start="" role="list">
+          <p data-aos="fade-up">Body: </p>
+          <ul
+            start=""
+            role="list"
+            className={styles.pageElobrateContentUnorderList}
+            data-aos="fade-up"
+          >
             <li>
               Communication Skills: Effective communication is crucial in the
               workplace, especially in today's globalized economy. Good
@@ -120,8 +147,8 @@ const JobMarket = () => {
               in emotional intelligence, practicing self-reflection, and seeking
               feedback from colleagues.
             </li>
-          </ol>
-          <p>
+          </ul>
+          <p data-aos="fade-up">
             In today's job market, soft skills are just as important as
             technical skills, if not more so. Employers are looking for
             candidates who possess communication skills, teamwork, adaptability,

@@ -16,7 +16,7 @@ const Footer = () => {
   return (
     <footer className={styles.footer__container}>
       <Container maxWidth="xl">
-        <div className={styles.logo__container}>
+        <div className={styles.logo__container} >
           <img
             src={turboTalentLogo}
             alt="TurboTalent"

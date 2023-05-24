@@ -32,8 +32,6 @@ const BlogDetail = () => {
       blogComponent = <></>;
   }
 
-  console.log(blogComponent);
-
   return <HomeLayout>{blogComponent}</HomeLayout>;
 };
 

@@ -1,29 +1,50 @@
 import React from "react";
 import { Grid, Typography } from "@mui/material";
 import styles from "./resume.module.css";
+import { useEffect } from "react";
+import AOS from "aos";
+import "aos/dist/aos.css";
+import { useLocation } from "react-router-dom";
 
 import resume from "../../../assets/images/static/blog/write-resume.png";
 
 const Resume = () => {
+  const { pathname } = useLocation();
+
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, [pathname]);
+
+  useEffect(() => {
+    AOS.init({
+      delay: 400, // values from 0 to 3000, with step 50ms
+      once: true, // whether animation should happen only once - while scrolling down
+    }); // Initialize AOS library
+  }, []);
+
   return (
     <Grid container direction="column" className={styles.blogpostRoot}>
       {/* Blog post header */}
-      <Grid item className={styles.blogpostHeaderBlock}>
+      <Grid item className={styles.blogpostHeaderBlock} data-aos="fade-up">
         {/* Badge and date */}
         <div className={styles.headerBadge}>
-          <div className={styles.headerBadgeLight}>
+          <div className={styles.headerBadgeLight} data-aos="fade-up">
             <div>New</div>
           </div>
-          <div>April 23, 2023</div>
+          <div data-aos="fade-up">April 23, 2023</div>
         </div>
         {/* Blog title */}
-        <div className={styles.blogpostTitle}>
+        <div className={styles.blogpostTitle} data-aos="fade-up">
           <Typography variant="h2">
             Writing a resume for AI because AI is most likely to see it first.
           </Typography>
         </div>
         {/* Blog post content */}
-        <Typography variant="body1" className={styles.paragraphLarge}>
+        <Typography
+          variant="body1"
+          className={styles.paragraphLarge}
+          data-aos="fade-up"
+        >
           <p>
             {" "}
             The skills you need to write a standout resume are essential in
@@ -50,12 +71,13 @@ const Resume = () => {
             loading="lazy"
             alt=""
             className={styles.blogpostImage}
+            data-aos="fade-up"
           />
         </div>
       </Grid>
       <Grid item>
         <div className={styles.pageElobrateContentContainer}>
-          <p>
+          <p data-aos="fade-up">
             In today's job market, creating a resume that stands out is crucial.
             However, with the rise of Artificial Intelligence (AI) based
             Applicant Tracking Systems (ATS), it is equally important to ensure
@@ -66,7 +88,7 @@ const Resume = () => {
             systems to filter out resumes in the initial screening process, as
             found in a study by Jobscan.
           </p>
-          <p>
+          <p data-aos="fade-up">
             Resume screening tools typically fall into one of three categories:
             keyword-based, grammar-based, and statistical, as described in an
             article by TopResume. These systems use AI to analyze resumes and
@@ -75,11 +97,16 @@ const Resume = () => {
             hire by up to 75%, with an average time savings of 23 hours per
             hire.
           </p>
-          <p>
+          <p data-aos="fade-up">
             So, how can you create a resume that is likely to do better in
             AI-based ATS systems? Here are some tips to consider:
           </p>
-          <ol start="" role="list">
+          <ul
+            start=""
+            role="list"
+            className={styles.pageElobrateContentUnorderList}
+            data-aos="fade-up"
+          >
             <li>
               Use relevant keywords: Keyword-based ATS systems scan resumes for
               specific words and phrases that match the job description. So,
@@ -146,15 +173,15 @@ const Resume = () => {
               process. Stick to simple and commonly used fonts like Arial, Times
               New Roman, or Calibri.
             </li>
-          </ol>
-          <p>
+          </ul>
+          <p data-aos="fade-up">
             In conclusion, with the rise of AI-based ATS systems, it's important
             to optimize your resume to pass the initial screening process. By
             incorporating these tips, you can create a resume that is likely to
             do better in ATS systems and increase your chances of landing an
             interview.
           </p>
-          <p>
+          <p data-aos="fade-up">
             It's important to note that while optimizing your resume for ATS
             systems is essential, it's equally important to create a resume that
             appeals to human recruiters. After all, ATS systems are designed to
@@ -162,13 +189,13 @@ const Resume = () => {
             ultimately up to human recruiters to make the final hiring
             decisions.
           </p>
-          <p>
+          <p data-aos="fade-up">
             Therefore, it's essential to strike a balance between optimizing
             your resume for ATS systems and creating a resume that showcases
             your skills and achievements. By doing so, you can create a resume
             that stands out to both ATS systems and human recruiters.
           </p>
-          <p>
+          <p data-aos="fade-up">
             In summary, optimizing your resume for AI-based ATS systems is
             crucial in today's job market. By using relevant keywords, tailoring
             your resume for each job, using simple formatting and standard
@@ -177,7 +204,7 @@ const Resume = () => {
             relevant information, and using a simple font, you can create a
             resume that is likely to pass the ATS screening process.
           </p>
-          <p>
+          <p data-aos="fade-up">
             However, it's important to remember that ATS systems are just one
             aspect of the job application process. Networking, gaining
             experience, and building your skills are all important components of
@@ -185,55 +212,58 @@ const Resume = () => {
             optimized resume, you can increase your chances of success in
             today's competitive job market.
           </p>
-          <p>
+          <p data-aos="fade-up">
             <strong>References:</strong>
           </p>
-          <ul start="" role="list">
-            <li>
+          <ul
+            start=""
+            role="list"
+            className={styles.pageElobrateContentRef}
+            data-aos="fade-up"
+          >
+            <li className={styles.pageElobrateContentRefLi}>
               Zety:{" "}
               <a href="https://zety.com/blog/how-many-resumes-do-recruiters-receive">
                 https://zety.com/blog/how-many-resumes-do-recruiters-receive
               </a>
             </li>
-            <li>
+            <li className={styles.pageElobrateContentRefLi}>
               Jobscan:{" "}
               <a href="https://www.jobscan.co/blog/resume-statistics/">
                 https://www.jobscan.co/blog/resume-statistics/
               </a>
             </li>
-            <li>
+            <li className={styles.pageElobrateContentRefLi}>
               TopResume:{" "}
               <a href="https://www.topresume.com/career-advice/how-to-write-an-attractive-resume">
                 https://www.topresume.com/career-advice/how-to-write-an-attractive-resume
               </a>
             </li>
-            <li>
+            <li className={styles.pageElobrateContentRefLi}>
               Ideal:{" "}
               <a href="https://ideal.com/ai-recruiting-stats/">
                 https://ideal.com/ai-recruiting-stats/
               </a>
             </li>
-            <li>
+            <li className={styles.pageElobrateContentRefLi}>
               CareerBuilder:{" "}
               <a href="https://www.careerbuilder.com/advice/human-capital-management/ai-and-the-hiring-process">
                 https://www.careerbuilder.com/advice/human-capital-management/ai-and-the-hiring-process
               </a>
             </li>
-            <li>
+            <li className={styles.pageElobrateContentRefLi}>
               Jobvite:{" "}
               <a href="https://www.jobvite.com/blog/2019-recruiting-benchmark-report/">
                 https://www.jobvite.com/blog/2019-recruiting-benchmark-report/
               </a>
             </li>
-            <li>
+            <li className={styles.pageElobrateContentRefLi}>
               The Balance Careers:{" "}
               <a href="https://www.thebalancecareers.com/how-to-beat-resume-screening-systems-2058491">
                 https://www.thebalancecareers.com/how-to-beat-resume-screening-systems-2058491
               </a>
             </li>
           </ul>
-          <p>‍</p>
-          <p>‍</p>
         </div>
       </Grid>
     </Grid>

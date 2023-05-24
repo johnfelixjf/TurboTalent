@@ -1,29 +1,50 @@
 import React from "react";
 import { Grid, Typography } from "@mui/material";
-import styles from "./Interviewer.module.css";
+import styles from "./collegeGraduate.module.css";
+import { useEffect } from "react";
+import AOS from "aos";
+import "aos/dist/aos.css";
+import { useLocation } from "react-router-dom";
 
 import collegeGraduateImage from "../../../assets/images/static/blog/navigate-job.png";
 
 const CollegeGraduate = () => {
+  const { pathname } = useLocation();
+
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, [pathname]);
+
+  useEffect(() => {
+    AOS.init({
+      delay: 400, // values from 0 to 3000, with step 50ms
+      once: true, // whether animation should happen only once - while scrolling down
+    }); // Initialize AOS library
+  }, []);
+
   return (
     <Grid container direction="column" className={styles.blogpostRoot}>
       {/* Blog post header */}
-      <Grid item className={styles.blogpostHeaderBlock}>
+      <Grid item className={styles.blogpostHeaderBlock} data-aos="fade-up">
         {/* Badge and date */}
         <div className={styles.headerBadge}>
-          <div className={styles.headerBadgeLight}>
+          <div className={styles.headerBadgeLight} data-aos="fade-up">
             <div>New</div>
           </div>
-          <div>April 23, 2023</div>
+          <div data-aos="fade-up">April 23, 2023</div>
         </div>
         {/* Blog title */}
-        <div className={styles.blogpostTitle}>
+        <div className={styles.blogpostTitle} data-aos="fade-up">
           <Typography variant="h2">
             Navigating the Job Market as a Recent College Graduate.
           </Typography>
         </div>
         {/* Blog post content */}
-        <Typography variant="body1" className={styles.paragraphLarge}>
+        <Typography
+          variant="body1"
+          className={styles.paragraphLarge}
+          data-aos="fade-up"
+        >
           <p>
             Entering the job market as a recent college graduate can be
             intimidating and overwhelming. With so many options and so much
@@ -55,7 +76,7 @@ const CollegeGraduate = () => {
       </Grid>
       <Grid item>
         <div className={styles.pageElobrateContentContainer}>
-          <p>
+          <p data-aos="fade-up">
             Entering the job market as a recent college graduate can be both
             exciting and daunting. While it's a time to celebrate your academic
             achievements, it's also a time to start planning for your
@@ -68,7 +89,12 @@ const CollegeGraduate = () => {
             interviews, and staying positive, we'll cover everything you need to
             know to kickstart your career.
           </p>
-          <ol start="" role="list">
+          <ul
+            start=""
+            role="list"
+            className={styles.pageElobrateContentUnorderList}
+            data-aos="fade-up"
+          >
             <li>
               Start with a Plan: Before diving into the job market, take some
               time to develop a plan. Research industries that interest you,
@@ -116,25 +142,8 @@ const CollegeGraduate = () => {
               skills, make connections, and continue to pursue opportunities
               that align with your goals.
             </li>
-            {/* <li>
-              Keep it concise: ATS systems prefer concise resumes that are easy
-              to scan. Keep your resume to one or two pages and avoid lengthy
-              paragraphs or sections.
-            </li>
-            <li>
-              Include relevant information: ATS systems are designed to identify
-              specific information on your resume, such as job titles,
-              companies, and dates of employment. Make sure to include this
-              information in a clear and concise manner.
-            </li>
-            <li>
-              Use a simple font: While using a unique font might make your
-              resume stand out, it can be a hindrance in the ATS screening
-              process. Stick to simple and commonly used fonts like Arial, Times
-              New Roman, or Calibri.
-            </li> */}
-          </ol>
-          <p>
+          </ul>
+          <p data-aos="fade-up">
             Navigating the job market as a recent college graduate can be
             overwhelming, but with a plan, preparation, and persistence, you can
             stand out from the crowd and land your dream job. Follow the tips

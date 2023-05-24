@@ -1,29 +1,50 @@
 import React from "react";
 import { Grid, Typography } from "@mui/material";
 import styles from "./Interviewer.module.css";
+import { useEffect } from "react";
+import AOS from "aos";
+import "aos/dist/aos.css";
+import { useLocation } from "react-router-dom";
 
 import interviewImage from "../../../assets/images/static/blog/no-call.webp";
 
 const Interviewer = () => {
+  const { pathname } = useLocation();
+
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, [pathname]);
+
+  useEffect(() => {
+    AOS.init({
+      delay: 400, // values from 0 to 3000, with step 50ms
+      once: true, // whether animation should happen only once - while scrolling down
+    }); // Initialize AOS library
+  }, []);
+
   return (
     <Grid container direction="column" className={styles.blogpostRoot}>
       {/* Blog post header */}
-      <Grid item className={styles.blogpostHeaderBlock}>
+      <Grid item className={styles.blogpostHeaderBlock} data-aos="fade-up">
         {/* Badge and date */}
         <div className={styles.headerBadge}>
-          <div className={styles.headerBadgeLight}>
+          <div className={styles.headerBadgeLight} data-aos="fade-up">
             <div>New</div>
           </div>
-          <div>April 23, 2023</div>
+          <div data-aos="fade-up">April 23, 2023</div>
         </div>
         {/* Blog title */}
-        <div className={styles.blogpostTitle}>
+        <div className={styles.blogpostTitle} data-aos="fade-up">
           <Typography variant="h2">
             No Call from Your Interviewer? Here's What to Do Next.
           </Typography>
         </div>
         {/* Blog post content */}
-        <Typography variant="body1" className={styles.paragraphLarge}>
+        <Typography
+          variant="body1"
+          className={styles.paragraphLarge}
+          data-aos="fade-up"
+        >
           <p>
             Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin non
             mauris tincidunt, porttitor sapien et, fringilla ligula. Etiam vel
@@ -52,15 +73,20 @@ const Interviewer = () => {
       </Grid>
       <Grid item>
         <div className={styles.pageElobrateContentContainer}>
-          <p>
+          <p data-aos="fade-up">
             Summary: Waiting for an interviewer to call you back after an
             interview can be nerve-wracking. However, there are several steps
             you can take to check for their intent, follow up professionally,
             and increase your chances of landing that dream job. In this blog
             post, we will guide you through each step in detail.
           </p>
-          <p>Body: </p>
-          <ol start="" role="list">
+          <p data-aos="fade-up">Body: </p>
+          <ul
+            start=""
+            role="list"
+            className={styles.pageElobrateContentUnorderList}
+            data-aos="fade-up"
+          >
             <li>
               Wait for a reasonable amount of time: The first step is to wait
               for a reasonable amount of time before taking any action.
@@ -117,26 +143,9 @@ const Interviewer = () => {
               analyze the situation and see if there's anything you could have
               done differently.
             </li>
-            {/* <li>
-              Keep it concise: ATS systems prefer concise resumes that are easy
-              to scan. Keep your resume to one or two pages and avoid lengthy
-              paragraphs or sections.
-            </li>
-            <li>
-              Include relevant information: ATS systems are designed to identify
-              specific information on your resume, such as job titles,
-              companies, and dates of employment. Make sure to include this
-              information in a clear and concise manner.
-            </li>
-            <li>
-              Use a simple font: While using a unique font might make your
-              resume stand out, it can be a hindrance in the ATS screening
-              process. Stick to simple and commonly used fonts like Arial, Times
-              New Roman, or Calibri.
-            </li> */}
-          </ol>
+          </ul>
           <p>Conclusion:</p>
-          <p>
+          <p data-aos="fade-up">
             Waiting for an interviewer to call you back can be stressful, but
             it's important to remain patient, professional, and proactive.
             Following the steps outlined in this blog post can help you increase

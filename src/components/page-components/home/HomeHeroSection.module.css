@@ -11,7 +11,7 @@
 
 .hero__text {
   text-align: center;
-  padding-left: 40px;
+  /* padding-left: 40px; */
   letter-spacing: -0.02em;
   margin-top: 0;
   margin-bottom: 0;
@@ -27,7 +27,7 @@
 }
 
 .hero__form-container {
-  width: 80%;
+  width: 90%;
   margin: auto;
   margin-top: 32px;
 }
@@ -60,7 +60,7 @@
 
 @media screen and (max-width: 900px) {
   .hero__text {
-    font-size: 28px;
+    font-size: 25px;
   }
 
   .hero__image {
